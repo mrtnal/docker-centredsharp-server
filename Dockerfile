@@ -9,8 +9,8 @@ ARG CED_VERSION="0.6.5.22"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update && \
-    apt install -y --no-install-recommends \
-        unzip wget dotnet-sdk-9.0 && \
+    apt install -y \
+        unzip wget dotnet-runtime-9.0 && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /cedserver
