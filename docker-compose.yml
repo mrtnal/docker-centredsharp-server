@@ -1,0 +1,13 @@
+services:
+  centredsharp-server:
+    image: centredsharp-server:0.6.5.22
+    container_name: centredsharp-server
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 2597:2597
+    volumes:
+      - ./data/config/Cedserver.xml:/cedserver/Cedserver.xml # REF: https://github.com/kaczy93/centredsharp/wiki/Server-setup#example-config
+      - ./data/muls:/cedserver/muls # Ultima Online files
